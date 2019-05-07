@@ -1,0 +1,20 @@
+{
+    "type": "object",
+    "properties": {
+        "requestBody": {
+            "properties": {
+                "template_id": {
+                    "description": "the ID of the template to delete",
+                    "example": 12,
+                    "type": "integer"
+                },
+                "uid": {
+                    "description": "The UID of the logged-in user",
+                    "example": "fhqwfuihuifqwhiuwqfhiqwfh124",
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

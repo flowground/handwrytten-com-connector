@@ -1,0 +1,21 @@
+{
+    "type": "object",
+    "properties": {
+        "requestBody": {
+            "type": "object",
+            "properties": {
+                "type": {
+                    "description": "set to cover or header",
+                    "type": "string"
+                },
+                "uid": {
+                    "description": "uid of the user",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "type"
+            ]
+        }
+    }
+}

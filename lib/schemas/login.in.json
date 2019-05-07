@@ -1,0 +1,26 @@
+{
+    "type": "object",
+    "properties": {
+        "requestBody": {
+            "properties": {
+                "login": {
+                    "description": "email address",
+                    "example": "john@jjf.com",
+                    "type": "string"
+                },
+                "password": {
+                    "example": "8yfqwiuy@!$",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "login",
+                "password"
+            ],
+            "type": "object",
+            "xml": {
+                "name": "login"
+            }
+        }
+    }
+}

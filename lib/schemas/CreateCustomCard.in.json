@@ -1,0 +1,94 @@
+{
+    "type": "object",
+    "properties": {
+        "requestBody": {
+            "properties": {
+                "card_id": {
+                    "description": "the card id of the card template you're starting with.  You can find this by logging into Handwrytten, clicking \"customize\" next to any customizable card, and pulling the card ID from the end of the URL",
+                    "example": 243,
+                    "type": "integer"
+                },
+                "cover_id": {
+                    "description": "the id of the image you want to use for the \"cover\".  The cover is the large image on the front of the flat card.",
+                    "example": 42,
+                    "type": "integer"
+                },
+                "cover_size_percent": {
+                    "description": "the size of the image to use as the cover.",
+                    "example": 100,
+                    "type": "integer"
+                },
+                "footer_align": {
+                    "description": "set to \"left\", \"center\", or \"right\" to align the footer appropriately",
+                    "example": "center",
+                    "type": "string"
+                },
+                "footer_font_id": {
+                    "description": "font ID of the text in the footer, found by using ListFontForCustomizer",
+                    "example": 1,
+                    "type": "integer"
+                },
+                "footer_font_size": {
+                    "description": "Font size of the text in the footer",
+                    "example": 16,
+                    "type": "integer"
+                },
+                "footer_text": {
+                    "description": "optional text for the footer of the customizable card",
+                    "example": "Sample text for the footer",
+                    "type": "string"
+                },
+                "header_align": {
+                    "description": "set to \"left\", \"center\", or \"right\" to align the header appropriately",
+                    "example": "center",
+                    "type": "string"
+                },
+                "header_auto_size": {
+                    "description": "if set to true, the header will be maximized to fill the header area",
+                    "type": "boolean"
+                },
+                "header_font_id": {
+                    "description": "font ID of the text in the header, found by using ListFontForCustomizer",
+                    "example": 8,
+                    "type": "integer"
+                },
+                "header_font_size": {
+                    "description": "font size of the text in the header of the card",
+                    "example": 20,
+                    "type": "integer"
+                },
+                "header_text": {
+                    "description": "text in the header, if type is set to \"text\"",
+                    "example": "Sample text for the header",
+                    "type": "string"
+                },
+                "logo_id": {
+                    "description": "Optional.  If setting \"type\" to \"logo\", set the id of the logo here.",
+                    "example": 20,
+                    "type": "integer"
+                },
+                "logo_size_percent": {
+                    "description": "set to the desired scaling of the logo on the header",
+                    "example": 100,
+                    "type": "integer"
+                },
+                "name": {
+                    "description": "the name of the new card",
+                    "example": "my custom card design",
+                    "type": "string"
+                },
+                "type": {
+                    "description": "Defines the top of the back of the card. Set to either \"logo\" or \"text\".",
+                    "example": "logo",
+                    "type": "string"
+                },
+                "uid": {
+                    "description": "authorized UID of the session.",
+                    "example": "fhqwfuihuifqwhiuwqfhiqwfh124",
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

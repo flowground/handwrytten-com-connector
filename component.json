@@ -1,0 +1,529 @@
+{
+    "title": "Handwrytten",
+    "description": "This is the Handwrytten API for sending cards written in the handwriting of your choice.\nUsing this api, you can send cards to users.  You can also customize cards with logos, which\ncan be saved and then used like any other card in the system.\nFor a \"sandbox\" account, please contact contact@handwrytten.com\nTo move from credit card per-transaction to monthly invoicing, also contact us.\n[https://www.handwrytten.com](https://www.handwrytten.com)\n",
+    "docsUrl": "",
+    "url": "https://api.apis.guru/v2/specs/handwrytten.com/1.0.0/swagger.json",
+    "envVars": {},
+    "credentials": {
+        "fields": {
+            "server": {
+                "label": "Server",
+                "viewClass": "SelectView",
+                "model": [
+                    "https://api.handwrytten.com/v1",
+                    "--- Custom URL"
+                ],
+                "required": true
+            },
+            "otherServer": {
+                "label": "Custom Server URL",
+                "viewClass": "TextFieldView"
+            }
+        }
+    },
+    "triggers": {
+        "startFlow": {
+            "main": "./lib/triggers/startFlow.js",
+            "type": "polling",
+            "title": "Start Flow",
+            "fields": {}
+        }
+    },
+    "actions": {
+        "login": {
+            "main": "./lib/actions/login.js",
+            "title": "Logs in to an existing account",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/login.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "changePassword": {
+            "main": "./lib/actions/changePassword.js",
+            "title": "changes a user's password",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/changePassword.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "logout": {
+            "main": "./lib/actions/logout.js",
+            "title": "logs out a session uid",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/logout.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "register": {
+            "main": "./lib/actions/register.js",
+            "title": "Registers a new account",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/register.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "resetPasswordRequest": {
+            "main": "./lib/actions/resetPasswordRequest.js",
+            "title": "resets a user's password",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/resetPasswordRequest.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "CreateCustomCard": {
+            "main": "./lib/actions/CreateCustomCard.js",
+            "title": "Create a new custom card",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/CreateCustomCard.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "simpleListCards": {
+            "main": "./lib/actions/simpleListCards.js",
+            "title": "Lists information on cards",
+            "description": "Filterable card list.  If called with UID will also provide user-specific cards.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/simpleListCards.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "listCards": {
+            "main": "./lib/actions/listCards.js",
+            "title": "Lists information on cards",
+            "description": "Simple listing of cards.  No filters can be applied.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/listCards.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "uploadCustomLogo": {
+            "main": "./lib/actions/uploadCustomLogo.js",
+            "title": "upload logo or cover image for card",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/uploadCustomLogo.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "filterableCardDetails": {
+            "main": "./lib/actions/filterableCardDetails.js",
+            "title": "Provides full information on a specific card",
+            "description": "Full card details",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/filterableCardDetails.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_countries_list": {
+            "main": "./lib/actions/get_countries_list.js",
+            "title": "Lists the countries to which Handwritten can mail, their associated country ID and any costs",
+            "description": "Lists the countries to which Handwritten can mail, their associated country ID and any costs",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_countries_list.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "fontsList": {
+            "main": "./lib/actions/fontsList.js",
+            "title": "Lists Handwryting styles available for use",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/fontsList.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "fontsListForCustomizer": {
+            "main": "./lib/actions/fontsListForCustomizer.js",
+            "title": "Lists fonts available for use with the card customizer",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/fontsListForCustomizer.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getGiftCardDetails": {
+            "main": "./lib/actions/getGiftCardDetails.js",
+            "title": "Lists information on gift cards",
+            "description": "Returns images and details (and associated denominations) of all gift cards",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getGiftCardDetails.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "giftCardDetails": {
+            "main": "./lib/actions/giftCardDetails.js",
+            "title": "Lists information on gift cards",
+            "description": "Returns images and details (and associated denominations) of all gift cards",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/giftCardDetails.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "singleStepOrder": {
+            "main": "./lib/actions/singleStepOrder.js",
+            "title": "sends an order in a single step.  This is much easier than using other order commands",
+            "description": "Sends an order in one step.  No need to create then process order.  Optionally include a gift card.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/singleStepOrder.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "userAddress": {
+            "main": "./lib/actions/userAddress.js",
+            "title": "gets the user's return address information",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/userAddress.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "deleteRecipient": {
+            "main": "./lib/actions/deleteRecipient.js",
+            "title": "deletes an existing recipient address",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/deleteRecipient.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "addRecipientAddress": {
+            "main": "./lib/actions/addRecipientAddress.js",
+            "title": "add a new recipient address",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/addRecipientAddress.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "recipientsList": {
+            "main": "./lib/actions/recipientsList.js",
+            "title": "list the addresses in the user's account",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/recipientsList.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "updateUserAddress": {
+            "main": "./lib/actions/updateUserAddress.js",
+            "title": "update the user's return address information",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/updateUserAddress.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "updateRecipient": {
+            "main": "./lib/actions/updateRecipient.js",
+            "title": "updates an existing new recipient address",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/updateRecipient.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getTemplateCategories": {
+            "main": "./lib/actions/getTemplateCategories.js",
+            "title": "List template categories",
+            "description": "Lists the common template categories of all users. As you are not logged in, this is what you are limited to.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getTemplateCategories.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getTemplateCategoriesAuthorized": {
+            "main": "./lib/actions/getTemplateCategoriesAuthorized.js",
+            "title": "List template categories",
+            "description": "Lists the template categories of all users. By passing the optional UID, any custom template categories are also available.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getTemplateCategoriesAuthorized.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "createTemplate": {
+            "main": "./lib/actions/createTemplate.js",
+            "title": "Creates a New Template in the User's Account",
+            "description": "Creates a new Template in the User's Account",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/createTemplate.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "deleteTemplate": {
+            "main": "./lib/actions/deleteTemplate.js",
+            "title": "Deletes a users template",
+            "description": "Deletes a template in the User's Account",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/deleteTemplate.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getTemplates": {
+            "main": "./lib/actions/getTemplates.js",
+            "title": "List template categories",
+            "description": "Lists the common template categories of all users. As you are not logged in, this is what you are limited to.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getTemplates.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getTemplatessAuthorized": {
+            "main": "./lib/actions/getTemplatessAuthorized.js",
+            "title": "List template categories",
+            "description": "Lists the template categories of all users. By passing the optional UID, any custom template categories are also available.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getTemplatessAuthorized.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "updateTemplate": {
+            "main": "./lib/actions/updateTemplate.js",
+            "title": "Updates an Existing Template in the User's Account",
+            "description": "Updates an Existing Template in the User's Account",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/updateTemplate.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getTemplateDetail": {
+            "main": "./lib/actions/getTemplateDetail.js",
+            "title": "Get all info on a template",
+            "description": "Provides all details on a template",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getTemplateDetail.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        }
+    }
+}

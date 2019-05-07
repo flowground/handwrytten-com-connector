@@ -1,0 +1,24 @@
+{
+    "type": "object",
+    "properties": {
+        "requestBody": {
+            "properties": {
+                "message": {
+                    "example": "How do I love thee?  Let me count the ways",
+                    "type": "string"
+                },
+                "name": {
+                    "description": "the new name of the template",
+                    "example": "My custom template",
+                    "type": "string"
+                },
+                "uid": {
+                    "description": "The UID of the logged-in user",
+                    "example": "fhqwfuihuifqwhiuwqfhiqwfh124",
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

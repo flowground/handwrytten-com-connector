@@ -1,0 +1,42 @@
+{
+    "type": "object",
+    "properties": {
+        "requestBody": {
+            "properties": {
+                "discount_code": {
+                    "description": "optional discount code",
+                    "type": "string"
+                },
+                "fname": {
+                    "description": "first name",
+                    "example": "John",
+                    "type": "string"
+                },
+                "lname": {
+                    "description": "last name",
+                    "example": "Smith",
+                    "type": "string"
+                },
+                "login": {
+                    "description": "email address",
+                    "example": "john@jjf.com",
+                    "type": "string"
+                },
+                "password": {
+                    "example": "8yfqwiuy@!$",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "login",
+                "password",
+                "fname",
+                "lname"
+            ],
+            "type": "object",
+            "xml": {
+                "name": "registration"
+            }
+        }
+    }
+}

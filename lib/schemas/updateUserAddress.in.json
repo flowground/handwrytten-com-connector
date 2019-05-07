@@ -1,0 +1,69 @@
+{
+    "type": "object",
+    "properties": {
+        "requestBody": {
+            "properties": {
+                "address1": {
+                    "description": "the first line of the address",
+                    "example": "1430 E Indian School Rd",
+                    "type": "string"
+                },
+                "address2": {
+                    "description": "the second (optional) line of the address",
+                    "example": "Suite 100",
+                    "type": "string"
+                },
+                "address_id": {
+                    "description": "the address you are updating",
+                    "example": 42,
+                    "type": "integer"
+                },
+                "business_name": {
+                    "description": "the optional business name on the address",
+                    "example": "Handwrytten LLC",
+                    "type": "string"
+                },
+                "city": {
+                    "description": "the city of the address",
+                    "example": "Phoenix",
+                    "type": "string"
+                },
+                "country": {
+                    "description": "the name of the country of the address",
+                    "example": "United States",
+                    "type": "string"
+                },
+                "country_id": {
+                    "description": "the id of the country of the address. do not use with \"country\" parameter",
+                    "example": 2,
+                    "type": "integer"
+                },
+                "name": {
+                    "description": "the name on the address",
+                    "example": "Joe Smith",
+                    "type": "string"
+                },
+                "state": {
+                    "description": "the abbreviated state or province of the address",
+                    "example": "AZ",
+                    "type": "string"
+                },
+                "uid": {
+                    "description": "authorized UID of the session.",
+                    "example": "33ce76fede1a31d5ee823179f78d9882",
+                    "type": "string"
+                },
+                "zip": {
+                    "description": "the zip or postal code of the address",
+                    "example": 85014,
+                    "type": "string"
+                }
+            },
+            "required": [
+                "uid",
+                "address_id"
+            ],
+            "type": "object"
+        }
+    }
+}

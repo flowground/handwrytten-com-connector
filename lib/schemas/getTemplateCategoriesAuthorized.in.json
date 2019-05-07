@@ -1,0 +1,15 @@
+{
+    "type": "object",
+    "properties": {
+        "requestBody": {
+            "properties": {
+                "uid": {
+                    "description": "optional authorized UID of the session.  By providing this, the template list will include user-specific template categories",
+                    "example": "fhqwfuihuifqwhiuwqfhiqwfh124",
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

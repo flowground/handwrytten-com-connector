@@ -1,0 +1,24 @@
+{
+    "type": "object",
+    "properties": {
+        "requestBody": {
+            "properties": {
+                "address_id": {
+                    "description": "the id of the address to delete",
+                    "example": 549494,
+                    "type": "integer"
+                },
+                "uid": {
+                    "description": "authorized UID of the session.",
+                    "example": "33ce76fede1a31d5ee823179f78d9882",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "uid",
+                "address_id"
+            ],
+            "type": "object"
+        }
+    }
+}

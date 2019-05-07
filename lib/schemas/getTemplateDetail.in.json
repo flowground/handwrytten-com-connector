@@ -1,0 +1,20 @@
+{
+    "type": "object",
+    "properties": {
+        "requestBody": {
+            "properties": {
+                "template_id": {
+                    "description": "the ID of the template to view",
+                    "example": 12,
+                    "type": "integer"
+                },
+                "uid": {
+                    "description": "optional authorized UID of the session.  By providing this, the user can specify user-sepecific templates",
+                    "example": "fhqwfuihuifqwhiuwqfhiqwfh124",
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

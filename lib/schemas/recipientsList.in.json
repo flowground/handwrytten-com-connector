@@ -1,0 +1,15 @@
+{
+    "type": "object",
+    "properties": {
+        "requestBody": {
+            "properties": {
+                "uid": {
+                    "description": "authorized UID of the session.",
+                    "example": "33ce76fede1a31d5ee823179f78d9882",
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

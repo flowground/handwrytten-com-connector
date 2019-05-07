@@ -1,0 +1,135 @@
+{
+    "type": "object",
+    "properties": {
+        "requestBody": {
+            "properties": {
+                "card_id": {
+                    "description": "the id of the card you want to send",
+                    "example": 3404,
+                    "type": "integer"
+                },
+                "credit_card_id": {
+                    "description": "the credit card id to charge for the order.  Currently this is required, even for invoiced accounts, it just won't be charged.",
+                    "example": 34124,
+                    "type": "integer"
+                },
+                "denomination_id": {
+                    "description": "Optional.  Use if sending a gift card",
+                    "example": 12,
+                    "type": "integer"
+                },
+                "font_label": {
+                    "description": "the colloquial name of the font, such as 'Fancy Jenna' or 'Casual David'",
+                    "example": "Chill Charity",
+                    "type": "string"
+                },
+                "message": {
+                    "description": "the full message body.  Use '\\n' for new lines",
+                    "example": "Dear Frank,\nThank you so much for your interest in our services.\nYours,\nJoe",
+                    "type": "string"
+                },
+                "recipient_address1": {
+                    "description": "the first address line of the return address",
+                    "example": "123 E Main Street",
+                    "type": "string"
+                },
+                "recipient_address2": {
+                    "description": "the second line of the address, such as suite, apartment, building, etc. Optional",
+                    "example": "Second Floor",
+                    "type": "string"
+                },
+                "recipient_business_name": {
+                    "description": "the second line of the recipient address.  Optional.",
+                    "example": "Spacely Space Sprockets",
+                    "type": "string"
+                },
+                "recipient_city": {
+                    "description": "the city of the recipient, to appear in the address",
+                    "example": "Burlington",
+                    "type": "string"
+                },
+                "recipient_country": {
+                    "description": "the country of the recipient.  Optional and defaults to usa",
+                    "example": "Canada",
+                    "type": "string"
+                },
+                "recipient_country_id": {
+                    "description": "alternate way to specify country.  Optional and defaults to 1",
+                    "example": 2,
+                    "type": "integer"
+                },
+                "recipient_name": {
+                    "description": "the name on the recipient address",
+                    "example": "Cosmo Spacely",
+                    "type": "string"
+                },
+                "recipient_state": {
+                    "description": "the ABBREVIATED state or province of the recipient.  This is required for US and Canada addresses and optional for all other countries",
+                    "example": "ON",
+                    "type": "string"
+                },
+                "recipient_zip": {
+                    "description": "the zip code or postal code of the recipient",
+                    "example": "L7L 0E9",
+                    "type": "string"
+                },
+                "sender_address1": {
+                    "description": "the first address line of the return address",
+                    "example": "1430 E Indian School Road",
+                    "type": "string"
+                },
+                "sender_address2": {
+                    "description": "the second line of the address, such as suite, apartment, building, etc. Optional",
+                    "example": "Suite 100",
+                    "type": "string"
+                },
+                "sender_business_name": {
+                    "description": "the second line of the return address.  Optional.",
+                    "example": "Handwrytten",
+                    "type": "string"
+                },
+                "sender_city": {
+                    "description": "the city of the sender, to appear in the return address",
+                    "example": "Phoenix",
+                    "type": "string"
+                },
+                "sender_country": {
+                    "description": "the country of the recipient.  Optional and defaults to usa",
+                    "example": "United States",
+                    "type": "string"
+                },
+                "sender_country_id": {
+                    "description": "alternate way to specify country.  Optional and defaults to 1",
+                    "example": 1,
+                    "type": "integer"
+                },
+                "sender_name": {
+                    "description": "the name on the return address",
+                    "example": "Joe Sender",
+                    "type": "string"
+                },
+                "sender_state": {
+                    "description": "the ABBREVIATED state or province of the sender.  This is required for US and Canada addresses and optional for all other countries",
+                    "example": "AZ",
+                    "type": "string"
+                },
+                "sender_zip": {
+                    "description": "The postal code or zip code of the sender.",
+                    "example": "12345",
+                    "type": "string"
+                },
+                "uid": {
+                    "description": "The UID of the logged-in user",
+                    "example": "fhqwfuihuifqwhiuwqfhiqwfh124",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "uid",
+                "card_id",
+                "message"
+            ],
+            "type": "object"
+        }
+    }
+}
